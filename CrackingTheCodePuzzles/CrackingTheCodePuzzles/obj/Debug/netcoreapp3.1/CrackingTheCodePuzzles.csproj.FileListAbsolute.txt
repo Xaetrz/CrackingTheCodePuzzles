@@ -1,0 +1,13 @@
+C:\Users\Jonathan\Documents\Programming\CrackingTheCodePuzzles\CrackingTheCodePuzzles\CrackingTheCodePuzzles\bin\Debug\netcoreapp3.1\CrackingTheCodePuzzles.exe
+C:\Users\Jonathan\Documents\Programming\CrackingTheCodePuzzles\CrackingTheCodePuzzles\CrackingTheCodePuzzles\bin\Debug\netcoreapp3.1\CrackingTheCodePuzzles.deps.json
+C:\Users\Jonathan\Documents\Programming\CrackingTheCodePuzzles\CrackingTheCodePuzzles\CrackingTheCodePuzzles\bin\Debug\netcoreapp3.1\CrackingTheCodePuzzles.runtimeconfig.json
+C:\Users\Jonathan\Documents\Programming\CrackingTheCodePuzzles\CrackingTheCodePuzzles\CrackingTheCodePuzzles\bin\Debug\netcoreapp3.1\CrackingTheCodePuzzles.runtimeconfig.dev.json
+C:\Users\Jonathan\Documents\Programming\CrackingTheCodePuzzles\CrackingTheCodePuzzles\CrackingTheCodePuzzles\bin\Debug\netcoreapp3.1\CrackingTheCodePuzzles.dll
+C:\Users\Jonathan\Documents\Programming\CrackingTheCodePuzzles\CrackingTheCodePuzzles\CrackingTheCodePuzzles\bin\Debug\netcoreapp3.1\CrackingTheCodePuzzles.pdb
+C:\Users\Jonathan\Documents\Programming\CrackingTheCodePuzzles\CrackingTheCodePuzzles\CrackingTheCodePuzzles\obj\Debug\netcoreapp3.1\CrackingTheCodePuzzles.csprojAssemblyReference.cache
+C:\Users\Jonathan\Documents\Programming\CrackingTheCodePuzzles\CrackingTheCodePuzzles\CrackingTheCodePuzzles\obj\Debug\netcoreapp3.1\CrackingTheCodePuzzles.AssemblyInfoInputs.cache
+C:\Users\Jonathan\Documents\Programming\CrackingTheCodePuzzles\CrackingTheCodePuzzles\CrackingTheCodePuzzles\obj\Debug\netcoreapp3.1\CrackingTheCodePuzzles.AssemblyInfo.cs
+C:\Users\Jonathan\Documents\Programming\CrackingTheCodePuzzles\CrackingTheCodePuzzles\CrackingTheCodePuzzles\obj\Debug\netcoreapp3.1\CrackingTheCodePuzzles.csproj.CoreCompileInputs.cache
+C:\Users\Jonathan\Documents\Programming\CrackingTheCodePuzzles\CrackingTheCodePuzzles\CrackingTheCodePuzzles\obj\Debug\netcoreapp3.1\CrackingTheCodePuzzles.dll
+C:\Users\Jonathan\Documents\Programming\CrackingTheCodePuzzles\CrackingTheCodePuzzles\CrackingTheCodePuzzles\obj\Debug\netcoreapp3.1\CrackingTheCodePuzzles.pdb
+C:\Users\Jonathan\Documents\Programming\CrackingTheCodePuzzles\CrackingTheCodePuzzles\CrackingTheCodePuzzles\obj\Debug\netcoreapp3.1\CrackingTheCodePuzzles.genruntimeconfig.cache
