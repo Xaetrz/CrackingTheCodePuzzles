@@ -46,6 +46,28 @@ namespace CrackingTheCodePuzzles
             }
             return true;
         }
+
+        /// <summary>
+        /// 1.2 Check Permutation: Given two strings, write a method to decide if one is a permutation of the other.
+        /// </summary>
+        /// <param name="a">String 1</param>
+        /// <param name="b">String 2</param>
+        /// <returns>True if permutation, false otherwise</returns>
+        public static bool CheckPermutation(string a, string b)
+        {
+            if (a.Length != b.Length) return false;
+
+            // Sort Algorithm: O(Nlog(N) + Mlog(M)), where N is length of a and M is length of b
+            char[] arr1 = a.ToCharArray();  // N
+            char[] arr2 = b.ToCharArray();  // M
+            Array.Sort(arr1);  // log(N) sort
+            Array.Sort(arr2);  // log(M) sort
+            a = new string(arr1);  // N
+            b = new string(arr2);  // M
+            return (a == b);  // N + M*/
+
+            // Faster implementation would be to count number of each character
+        }
     }
 
 
