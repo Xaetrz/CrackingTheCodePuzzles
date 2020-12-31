@@ -24,10 +24,9 @@ namespace CrackingTheCodePuzzles
             }
         }
 
-        // 0000001 << 4
-        // 0010000   =>   110011
-
-
+        /// <summary>
+        /// 5.1 Insertion: Insert binary of m into n between bits i and j
+        /// </summary>
         public static int Insertion_Test(int n, int m, int i, int j)
         {
             int leftClearMask = ~0;
@@ -36,6 +35,10 @@ namespace CrackingTheCodePuzzles
             return (n & (leftClearMask | rightClearMask)) | insertMask;
         }
 
+        /*public static BinaryToString(double num)
+        {
+
+        }*/
 
     }
 }
