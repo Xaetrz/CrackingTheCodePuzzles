@@ -69,48 +69,4 @@ namespace CrackingTheCodePuzzles.Chapters
             // Faster implementation would be to count number of each character
         }
     }
-
-
-    public class StringBuilderScratch
-    {
-        private char[] _characters;
-        private int _lastIndex = 0;
-
-        public StringBuilderScratch()
-        {
-            _characters = new char[10];
-        }
-
-        public StringBuilderScratch(string word)
-        {
-            _characters = new char[word.Length * 2];
-            this.Append(word);
-        }
-
-        public void Append(string word)
-        {
-            // Double array size if needed
-            if (word.Length + _lastIndex > _characters.Length)
-            {
-                char[] newArr = new char[_characters.Length * 2];
-                for (int i = 0; i < _characters.Length; i++)
-                {
-                    newArr[i] = _characters[i];
-                }
-                _characters = newArr;
-            }
-            // Append word
-            foreach (char c in word)
-            {
-                _characters[_lastIndex++] = c;
-            }
-        }
-
-        public override string ToString()
-        {
-            if (_characters == null) return "";
-            return _characters.ToString();
-        }
-
-    }
 }

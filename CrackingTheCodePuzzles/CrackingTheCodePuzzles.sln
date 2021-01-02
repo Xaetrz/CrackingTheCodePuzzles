@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrackingTheCodePuzzles", "CrackingTheCodePuzzles\CrackingTheCodePuzzles.csproj", "{32757990-1BA5-4AEA-AA36-B5504BD4D15F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrackingTheCodePuzzlesTest", "CrackingTheCodePuzzlesTest\CrackingTheCodePuzzlesTest.csproj", "{4725C9C7-536B-4584-8D01-1A9FC39AFFB0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrackingTheCodePuzzlesTests", "CrackingTheCodePuzzlesTests\CrackingTheCodePuzzlesTests.csproj", "{1EE2D41C-B561-4C54-A89D-C28920AC56F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{32757990-1BA5-4AEA-AA36-B5504BD4D15F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32757990-1BA5-4AEA-AA36-B5504BD4D15F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32757990-1BA5-4AEA-AA36-B5504BD4D15F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4725C9C7-536B-4584-8D01-1A9FC39AFFB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4725C9C7-536B-4584-8D01-1A9FC39AFFB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4725C9C7-536B-4584-8D01-1A9FC39AFFB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4725C9C7-536B-4584-8D01-1A9FC39AFFB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EE2D41C-B561-4C54-A89D-C28920AC56F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EE2D41C-B561-4C54-A89D-C28920AC56F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EE2D41C-B561-4C54-A89D-C28920AC56F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EE2D41C-B561-4C54-A89D-C28920AC56F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
