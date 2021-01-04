@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CrackingTheCodePuzzles.Implementation;
 
 namespace CrackingTheCodePuzzles.Chapters
 {
@@ -35,6 +36,23 @@ namespace CrackingTheCodePuzzles.Chapters
         public static void WordFrequencies(string filePath)
         {
 
+        }
+
+
+        /// <summary>
+        /// 16.3 Intersection of two line segments
+        /// </summary>
+        public static Point Intersection(LineSegment lineSeg1, LineSegment lineSeg2)
+        {
+            // Important Note: Assumes that the start point has a X coordinate before the X coordinate of the end point for each line segment
+
+            Line line1 = new Line(lineSeg1.StartPoint, lineSeg1.EndPoint);
+            Line line2 = new Line(lineSeg2.StartPoint, lineSeg2.EndPoint);
+
+            Point intersectPoint = Line.Intersection(line1, line2);
+
+            if (LineSegment.DoLineSegmentsIntersect(lineSeg1, lineSeg2, intersectPoint)) return intersectPoint;
+            else return null;
         }
     }
 }

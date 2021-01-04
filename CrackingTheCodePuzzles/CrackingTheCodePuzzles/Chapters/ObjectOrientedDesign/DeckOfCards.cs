@@ -42,8 +42,18 @@ namespace CrackingTheCodePuzzles.Chapters.ObjectOrientedDesign
 
 
 
-    public class Blackjack
+    public class BlackjackHand: Hand<Card>
     {
-        Deck<>
+        Deck<Card> _deck;
+
+        public override int Score()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class BlackJackCard: Card
+    {
+
     }
 }
