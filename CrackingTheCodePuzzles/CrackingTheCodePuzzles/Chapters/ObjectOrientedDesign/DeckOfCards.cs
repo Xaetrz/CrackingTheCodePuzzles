@@ -52,8 +52,10 @@ namespace CrackingTheCodePuzzles.Chapters.ObjectOrientedDesign
         }
     }
 
+    /*
     public class BlackJackCard: Card
     {
 
     }
+    */
 }

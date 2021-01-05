@@ -13,7 +13,8 @@ namespace CrackingTheCodePuzzles
             //Console.WriteLine(BitManipulation.PrintBinary(BitManipulation.Insertion_Test(0b_10_0000_0000, 0b_1_0011, 2, 6)));
             //Moderate.NumberSwapperInPlace(70, 71);
             //Console.WriteLine(ArraysAndStrings.IsUnique("uniqze"));
-            Console.WriteLine(ArraysAndStrings.CheckPermutation("uze", "zue"));
+            //Console.WriteLine(ArraysAndStrings.CheckPermutation("uze", "zue"));
+            RecursionAndDynamicProgramming.PrintExampleMazes();
         }
 
 

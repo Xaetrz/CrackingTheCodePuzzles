@@ -34,16 +34,20 @@ namespace CrackingTheCodePuzzles.Chapters
             return memo[totalSteps];
         }
 
+        /// <summary>
+        /// 8.2 Imagine a robot sitting on the upper left corner of grid with r rows and c columns.
+        /// The robot can only move in two directions, right and down, but certain cells are "off limits" such that
+        /// the robot cannot step on them.Design an algorithm to find a path for the robot from the top left to the bottom right.
+        /// </summary>
         public static List<Point> RobotInAGrid(bool[,] maze)
         {
             List<Point> path = new List<Point>();
-            bool[,] failedPoints = new bool[maze.GetLength(0) - 1, maze.GetLength(1) - 1];
+            bool[,] failedPoints = new bool[maze.GetLength(0), maze.GetLength(1)];
             bool isValidPath = RobotInAGrid(maze, path, new Point(0, 0), failedPoints);
 
             if (!isValidPath) return null;
             return path;
         }
-
         public static bool RobotInAGrid(bool[,] maze, List<Point> path, Point curLoc, bool[,] failedPoints)
         {
             // Add cur location to path if not blocked or not already failed, otherwise invalid path
@@ -51,20 +55,49 @@ namespace CrackingTheCodePuzzles.Chapters
             else path.Add(curLoc);
             
             // Reached the end of the maze
-            if (curLoc.X == maze.GetLength(0) && curLoc.Y == maze.GetLength(1)) return true;
-
-            // Search one right
-            bool isValidPath = RobotInAGrid(maze, path, new Point(curLoc.X + 1, curLoc.Y), failedPoints);
-            if (isValidPath) return true;
+            if (curLoc.X == maze.GetLength(0) - 1 && curLoc.Y == maze.GetLength(1) - 1) return true;
 
             // Search one down
-            isValidPath = RobotInAGrid(maze, path, new Point(curLoc.X, curLoc.Y + 1), failedPoints);
-            if (isValidPath) return true;
+            if (curLoc.X < maze.GetLength(0) - 1)
+            {
+                bool isValidPath = RobotInAGrid(maze, path, new Point(curLoc.X + 1, curLoc.Y), failedPoints);
+                if (isValidPath) return true;
+            }
+            
+            // Search one right
+            if (curLoc.Y < maze.GetLength(1) - 1)
+            {
+                bool isValidPath = RobotInAGrid(maze, path, new Point(curLoc.X, curLoc.Y + 1), failedPoints);
+                if (isValidPath) return true;
+            }
 
             // No valid path from current location, so remove from path list
             path.RemoveAt(path.Count - 1);
             failedPoints[curLoc.X, curLoc.Y] = true;
             return false;
+        }
+        public static void PrintMazeAndPath(bool[,] maze, List<Point> path)
+        {
+            for (int i = 0; i <= maze.GetLength(0) - 1; i++)
+            {
+                for (int j = 0; j <= maze.GetLength(1) - 1; j++)
+                {
+                    Point currentPoint = new Point(i, j);
+                    if (path.Contains(currentPoint)) Console.Write("#");
+                    else if (maze[i, j]) Console.Write("X");
+                    else Console.Write("O");
+                }
+                Console.WriteLine();
+            }
+        }
+        public static void PrintExampleMazes()
+        {
+            bool[,] maze1 = new bool[,] { { false, false, true,  false, false },
+                                          { false, false, true,  false, false },
+                                          { false, false, false, false, false },
+                                          { false, true,  false, false, false },
+                                          { true,  false, false, false, false } };
+            PrintMazeAndPath(maze1, RobotInAGrid(maze1));
         }
     }
 }
