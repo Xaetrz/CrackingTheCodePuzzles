@@ -33,7 +33,7 @@ namespace CrackingTheCodePuzzles.Implementation
                       || lineSeg2.StartPoint.X > lineIntersection.X
                       || lineSeg2.StartPoint.Y > lineIntersection.Y
                       || lineSeg2.EndPoint.X < lineIntersection.Y
-                      || lineSeg2.EndPoint.Y < lineIntersection.Y); // Note: Actually only have to check lineSeg1
+                      || lineSeg2.EndPoint.Y < lineIntersection.Y); // Note: Actually only have to check lineSeg1. If lineIntersection exists on one, it exists on other.
         }
     }
     public class Line
