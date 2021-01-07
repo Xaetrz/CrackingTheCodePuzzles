@@ -15,21 +15,9 @@ namespace CrackingTheCodePuzzles.Chapters.ObjectOrientedDesign
         public T DealCard() { /*Generic Implementation.*/ throw new NotImplementedException(); } 
     }
 
-    public abstract class Card
-    {
-        public Suit Suit { get; private set; }
-        public int FaceValue { get; private set; }
-
-        public Card(Suit suit, int val)
-        {
-            this.Suit = suit;
-            this.FaceValue = val;
-        }
-    }
-
     public abstract class Hand<T> where T: Card
     {
-        private List<Card> _hand;
+        protected List<Card> _hand;
 
         public Hand() { _hand = new List<Card>(); }
 
@@ -40,22 +28,45 @@ namespace CrackingTheCodePuzzles.Chapters.ObjectOrientedDesign
         }
     }
 
-
-
-    public class BlackjackHand: Hand<Card>
+    public abstract class Card
     {
-        Deck<Card> _deck;
+        public Suit Suit { get; protected set; }
+        protected int FaceValue { get; set; } // True value of card (see Value method) differs by type of game 
 
+        public Card(Suit suit, int val)
+        {
+            this.Suit = suit;
+            this.FaceValue = val;
+        }
+
+        public abstract int Value();
+    }
+
+    public class BlackjackHand: Hand<BlackJackCard>
+    {
         public override int Score()
         {
-            throw new NotImplementedException();
+            int total = 0;
+            foreach (Card c in base._hand)
+            {
+                total += c.Value();
+            }
+            return total;
         }
     }
 
-    /*
+    
     public class BlackJackCard: Card
     {
+        public BlackJackCard(Suit suit, int val) : base(suit, val) { }
+
+        public override int Value()
+        {
+            if (base.FaceValue == 1) return 11;
+            else if (base.FaceValue >= 10 && base.FaceValue <= 12) return 10;
+            return base.FaceValue;
+        }
 
     }
-    */
+    
 }
