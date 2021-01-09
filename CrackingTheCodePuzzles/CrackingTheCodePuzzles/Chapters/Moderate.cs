@@ -79,7 +79,6 @@ namespace CrackingTheCodePuzzles.Chapters
             return 0;
         }
 
-
         /// <summary>
         /// 16.3 Intersection of two line segments
         /// </summary>
@@ -95,6 +94,80 @@ namespace CrackingTheCodePuzzles.Chapters
             if (LineSegment.DoLineSegmentsIntersect(lineSeg1, lineSeg2, intersectPoint)) return intersectPoint;
             else return null;
         }
+
+        /// <summary>
+        /// 16.4 Tic Tac Win: Design an algorithm to figure out if someone has won a game of tic-tac-toe.
+        /// </summary>
+        public static Piece IsTicTacWin(Piece[,] board)
+        {
+            Piece firstPiece;
+            int numRows = board.GetLength(0),
+                numCols = board.GetLength(1);
+
+            // Check rows
+            for (int row = 0; row < numRows; row++)
+            {
+                firstPiece = board[row, 0];
+                if (IsRowWon(board, row)) return firstPiece; 
+            }
+
+            // Check columns
+            for (int col = 0; col < numCols; col++)
+            {
+                firstPiece = board[0, col];
+                if (IsColumnWon(board, col)) return firstPiece;
+            }
+
+            // Check top-left to bottom-right diagonal
+            firstPiece = board[0, 0];
+            if (IsDiagonalWon(board, 1)) return firstPiece;
+
+            // Check bottom-left to top-right diagonal
+            firstPiece = board[numRows - 1, numCols - 1];
+            if (IsDiagonalWon(board, -1)) return firstPiece;
+
+            return Piece.Empty;
+        }
+        public static bool IsRowWon(Piece[,] board, int row)
+        {
+            Piece firstPiece = board[row, 0];
+            if (firstPiece == Piece.Empty) return false;
+
+            for (int col = 1; col < board.GetLength(1); col++)
+            {
+                Piece nextPiece = board[row, col];
+                if (firstPiece != nextPiece) return false;
+            }
+            return true;
+        }
+        public static bool IsColumnWon(Piece[,] board, int col)
+        {
+            Piece firstPiece = board[0, col];
+            if (firstPiece == Piece.Empty) return false;
+
+            for (int row = 1; row < board.GetLength(0); row++)
+            {
+                Piece nextPiece = board[row, col];
+                if (firstPiece != nextPiece) return false;
+            }
+            return true;
+        }
+        public static bool IsDiagonalWon(Piece[,] board, int direction)
+        {
+            int col = (direction == 1) ? 0 : board.GetLength(1) - 1;
+            Piece firstPiece = board[0, col];
+            if (firstPiece == Piece.Empty) return false;
+
+            for (int row = 1; row < board.GetLength(0); row++)
+            {
+                col += direction;
+                Piece nextPiece = board[row, col];
+                if (firstPiece != nextPiece) return false;
+            }
+            return true;
+        }
+        public enum Piece { Empty = 0, Red = 1, Blue = 2 }
+
     }
 }
 
