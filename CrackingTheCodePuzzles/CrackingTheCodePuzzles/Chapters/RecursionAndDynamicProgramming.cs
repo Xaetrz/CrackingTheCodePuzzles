@@ -101,5 +101,40 @@ namespace CrackingTheCodePuzzles.Chapters
                                           { true,  false, false, true,  false } };
             PrintMazeAndPath(maze1, RobotInAGrid(maze1));
         }
+
+        /// <summary>
+        /// Magic Index: A magic index in an array A [e ... n -1] is defined to be an index such that A[ i] = i.
+        /// Given a sorted array of distinct integers, write a method to find a magic index, if one exists, in array A.
+        /// FOLLOW UP: What if the values are not distinct?
+        /// </summary>
+        public static int MagicIndex(int[] sortedArr)
+        {
+            return MagicIndex(sortedArr, 0);
+        }
+        public static int MagicIndex(int[] sortedArr, int curIndex)
+        {
+            if (curIndex > sortedArr.Length - 1) return -1;
+
+            int curVal = sortedArr[curIndex];
+
+            // If values are distinct, then curVal > curIndex means there can't be a magic index later.
+            //if (curVal > curIndex) return -1;
+            
+            if (curVal == curIndex) return curVal;
+
+            // If curVal is not distinct, loop forward through the array until the next value is > curVal
+            int nextIndex = curIndex + 1;
+            int nextVal;
+            do
+            {
+                if (nextIndex > sortedArr.Length - 1) return -1;
+                nextVal = sortedArr[nextIndex];
+                nextIndex++;
+            } while (nextVal == curVal);
+
+            // If nextIndex is greater than nextVal, then can skip ahead
+            nextIndex += Math.Clamp(nextVal - nextIndex, 1, sortedArr.Length);
+            return MagicIndex(sortedArr, nextIndex);
+        }
     }
 }
