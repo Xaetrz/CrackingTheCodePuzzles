@@ -22,18 +22,13 @@ function existsRouteBetweenNodes(node1, node2) {
     let queue = [];
     let visited = new Map();
     queue.push(node1);
-    visited[node1] = true;
-    visited[node2] = true;
+    visited[node1.name] = true;
     
     while (queue.length > 0) {
         let nextNode = queue.shift();
         for (let adjNode of nextNode.children) {
-
-                
             if (adjNode === node2) return true;
-            
             if (visited[adjNode.name]) continue;  // Assumes nodes have unique names. Can't use objects as keys. Solution in book keeps track of state via Node object itself
-
             queue.push(adjNode);
             visited[adjNode.name] = true;         
         }
@@ -41,7 +36,7 @@ function existsRouteBetweenNodes(node1, node2) {
     return false;
 }
 
-function testSimple() {
+function test() {
     let vertex1 = new Node("v1");
     let vertex2 = new Node("v2");
     let vertex3 = new Node("v3");
@@ -52,7 +47,7 @@ function testSimple() {
     vertex1.children.push(vertex2);
     vertex3.children.push(vertex1);
     vertex3.children.push(vertex4);
-    vertex4.children.push(vertex3); // Cycle
+    vertex4.children.push(vertex3); // Cycle between 3 and 4
 
     // Unconnected cycle
     vertex5.children.push(vertex6);
@@ -63,6 +58,7 @@ function testSimple() {
     console.assert(existsRouteBetweenNodes(vertex4, vertex2),"Test 3 Failed");
     console.assert(!existsRouteBetweenNodes(vertex2, vertex4),"Test 4 Failed");
     console.assert(!existsRouteBetweenNodes(vertex5, vertex2),"Test 5 Failed");
+    console.assert(existsRouteBetweenNodes(vertex6, vertex5),"Test 6 Failed");
 }
 
-testSimple();
+test();
