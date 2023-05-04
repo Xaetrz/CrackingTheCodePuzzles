@@ -3,10 +3,10 @@
 */
 
 function fibonacciIterative(num) {
-    if (num <= 1) return 1;
+    if (num <= 2) return 1;
     let curr = 1;
     let prev = 1;
-    for (let i = 2; i <= num; i++) {
+    for (let i = 3; i <= num; i++) {
         let temp = curr;
         curr += prev;
         prev = temp;
@@ -15,7 +15,7 @@ function fibonacciIterative(num) {
 }
 
 function fibonacciRecursive(num) {
-    if (num <= 1) return 1;
+    if (num <= 2) return 1;
     return fibonacciRecursive(num - 1) + fibonacciRecursive(num - 2);
 }
 
